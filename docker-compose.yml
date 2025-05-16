@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    environment:
+      - MONGODB_URI=mongodb+srv://duypham:741852963@cluster0.y6e6y2l.mongodb.net/vocab?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true
+      - NODE_ENV=production
+    volumes:
+      - ./.env:/app/.env
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  mongodb_data:
+    name: telegram-vocab-bot
