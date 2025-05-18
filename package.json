@@ -5,9 +5,7 @@
     "main": "bot.js",
     "scripts": {
         "start": "node bot.js",
-        "test-send": "node test-send.js",
-        "get-chat-id": "node get-chat-id.js",
-        "add-user": "node add-user.js"
+        "test-send": "node test-send.js"
     },
     "keywords": [
         "telegram",

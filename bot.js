@@ -18,6 +18,7 @@ const WORD_FILE = path.join(__dirname, 'words.txt');
 const SEND_TIME_HOUR = 8;
 const SEND_TIME_MINUTE = 0;
 const WORDS_PER_DAY = 10;
+const PORT = process.env.PORT || 3000;
 
 // Validate required environment variables
 if (!TOKEN || !CHANNEL_ID) {
@@ -580,4 +581,9 @@ async function main() {
 main().catch(error => {
     console.error('Fatal error:', error);
     process.exit(1);
+});
+
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
